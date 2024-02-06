@@ -1,0 +1,16 @@
+[package]
+name = "rawr_attribute"
+description = "Marker attribute for identifying particular versions of code in a git repository."
+
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+authors = ["Thomas Johnson <NTmatter@gmail.com>"]
+repository = "https://github.com/NTmatter/rawr_attribute.git"
+publish = false
+
+[lib]
+proc-macro = true
+
+[dependencies]
