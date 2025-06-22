@@ -1,17 +1,13 @@
-[package]
-name = "rawr_attribute"
-description = "Attribute embedding the state and location of code in a git repository."
+[workspace]
+resolver = "3"
+members = ["rawr_macro", "rawr_proc_macro"]
 
-version = "0.1.0"
-edition = "2021"
+[workspace.package]
+publish = false
+description = "Marker macros for referencing the state of items in a git repository."
+
+edition = "2024"
 license = "MIT"
 
 authors = ["Thomas Johnson <NTmatter@gmail.com>"]
 repository = "https://github.com/NTmatter/rawr_attribute.git"
-
-publish = false
-
-[lib]
-proc-macro = true
-
-[dependencies]

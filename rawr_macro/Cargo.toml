@@ -1,0 +1,10 @@
+[package]
+name = "rawr_macro"
+version = "0.1.0"
+authors = ["Thomas Johnson <NTmatter@gmail.com>"]
+edition = "2024"
+license = "MIT"
+publish = false
+
+[dependencies]
+rawr_proc_macro = { version = "0.1", path = "../rawr_proc_macro" }
