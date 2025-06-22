@@ -10,9 +10,9 @@ use proc_macro::TokenStream;
 /// revision, and various other properties. Has no functionality, other than
 /// as a marker for external tools.
 ///
-/// Provides no functionality, and expands to nothing.
+/// Provides no functionality and passes through the annotated item.
 ///
-/// NOTE: This is not yet validated, as the fields have not been stabilized.
+/// NOTE: There is no validation yet, as the fields have not been stabilized.
 ///
 /// # Arguments
 /// * `upstream` - Optional name of codebase in which item resides. Use the
@@ -20,17 +20,18 @@ use proc_macro::TokenStream;
 /// * `rev` - Git revision, branch, or tag that the item was last reviewed.
 /// * `file` - Path to containing file, relative to the upstream's root.
 /// * `kind` - Type of object as per the codebase's objects of interest.
-/// * `ident` - Name of the item being referenced.
+/// * `ident` - Optional, name of the item being referenced.
 /// * `state` - Optional, workflow state. The built-in workflow uses `DONE` and `TODO`.
 /// * `action` - Optional, for implementation planning.
 /// * `notes` - Optional, human-friendly notes about the reference.
 /// * `ignore` - Optional, if `true`, ignore mismatches with the upstream codebase.
 #[proc_macro_attribute]
-pub fn rawr(_input: TokenStream, _annotated_item: TokenStream) -> TokenStream {
-    TokenStream::new()
+pub fn rawr(_input: TokenStream, annotated_item: TokenStream) -> TokenStream {
+    annotated_item
 }
 
 /// Derive macro to allow use of rawr attribute inside enums and structs.
+/// Provides no functionality, and outputs nothing.
 #[proc_macro_derive(Rawr, attributes(rawr))]
 pub fn derive_helper_attr(_item: TokenStream) -> TokenStream {
     TokenStream::new()
