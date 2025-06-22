@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-// NOTE: The annotation is MIT-licensed for maximum compatibility with other codebases.
-// Usage and validation primarily occurs in the RAWR utility.
+// NOTE: This is MIT-licensed for maximum compatibility with other codebases.
+// Usage and validation primarily occurs in the RAWR utility and user crates.
+
+#![forbid(unsafe_code)]
 
 extern crate proc_macro;
 use proc_macro::TokenStream;
